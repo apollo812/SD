@@ -428,7 +428,7 @@ def configure_for_tests():
 
 
 def start():
-    print(f"Launching {'API server' if '--nowebui' in sys.argv else 'Web UI'} with arguments: {' '.join(sys.argv[1:])}")
+    print(f"Launching Stable Diffusion XL API:")
     import api
     api.api_only()
 
