@@ -428,7 +428,7 @@ def configure_for_tests():
 
 
 def start():
-    print(f"Launching Stable Diffusion XL API:")
+    print("Launching Stable Diffusion XL API:")
     import api
     api.api_only()
 
