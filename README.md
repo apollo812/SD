@@ -5,6 +5,8 @@ git clone https://github.com/apollo812/SD.git SD
 bash setup.sh
 
 ## 3. Generate the image from text
+Write your desired prompt in the “Prompt” field.
+
 python scripts/txt2img.py --prompt "prompt"
 
 Results are saved in the output folder.
