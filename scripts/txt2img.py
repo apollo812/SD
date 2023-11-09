@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/workspace/SD')
+sys.path.append('/workspace/SDXL')
 
 import argparse, os
 import cv2
