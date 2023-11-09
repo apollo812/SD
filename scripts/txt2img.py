@@ -3,8 +3,8 @@ import argparse, os
 import cv2
 import torch
 from PIL import Image
-from util.load_sdxl_base_model import load_sdxl_base_model
-from util.load_sdxl_refiner_model import load_sdxl_refiner_model
+from load_sdxl_base_model import load_sdxl_base_model
+from load_sdxl_refiner_model import load_sdxl_refiner_model
 from dotenv import load_dotenv
 
 load_dotenv()
