@@ -9,5 +9,9 @@ python scripts/txt2img.py --prompt "prompt"
 
 ## 4. env setting info
 MODEL_TYPE=server/local
+
 MODEL_LOAD_TYPE=pretrained/single
+
 MODEL=base/refiner
+
+OUTPUT_PATH=output

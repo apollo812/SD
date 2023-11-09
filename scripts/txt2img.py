@@ -12,6 +12,7 @@ from utils.load_sdxl_refiner_model import load_sdxl_refiner_model
 MODEL_TYPE="server"
 MODEL_LOAD_TYPE="pretrained"
 MODEL="base"
+OUTPUT_PATH="output"
 
 
 # Parse arguments
@@ -237,7 +238,7 @@ def main(args):
     image = model(args.prompt).images[0]
 
     # Save the result
-    image.save(f"{args.prompt}.png")
+    image.save(f"{OUTPUT_PATH}/{args.prompt}.png")
 
 
 if __name__ == "__main__":
