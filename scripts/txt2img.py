@@ -2,8 +2,8 @@ import argparse, os
 import cv2
 import torch
 from PIL import Image
-from utils import LD_SDXL_BASE
-from utils import LD_SDXL_REFINER
+from utils import load_sdxl_base_model
+from utils import load_sdxl_refiner_model
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -205,9 +205,9 @@ def put_watermark(img, wm_encoder=None):
 
 def main(args):
     if MODEL == "base":
-        model = LD_SDXL_BASE.load_sdxl_base_model(MODEL_TYPE, MODEL_LOAD_TYPE)
+        model = load_sdxl_base_model(MODEL_TYPE, MODEL_LOAD_TYPE)
     elif MODEL == "refiner":
-        model = LD_SDXL_REFINER.load_sdxl_refiner_model(MODEL_TYPE, MODEL_LOAD_TYPE)
+        model = load_sdxl_refiner_model(MODEL_TYPE, MODEL_LOAD_TYPE)
 
     image = model(args).images[0]
     image.save("image_of_squirrel_painting.png")
