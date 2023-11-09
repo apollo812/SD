@@ -9,9 +9,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-MODEL_TYPE = os.getenv('MODEL_TYPE')
-MODEL_LOAD_TYPE = os.getenv('MODEL_LOAD_TYPE')
-MODEL = os.getenv('MODEL')
+# MODEL_TYPE = os.getenv('MODEL_TYPE')
+# MODEL_LOAD_TYPE = os.getenv('MODEL_LOAD_TYPE')
+# MODEL = os.getenv('MODEL')
+MODEL_TYPE="server"
+MODEL_LOAD_TYPE="pretrained"
+MODEL="base"
 
 
 def parse_args():
