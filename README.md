@@ -7,6 +7,8 @@ bash setup.sh
 ## 3. Generate the image from text
 python scripts/txt2img.py --prompt "prompt"
 
+Results are saved in the output folder.
+
 ## 4. env setting info
 MODEL_TYPE=server/local
 
