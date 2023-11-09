@@ -1,5 +1,6 @@
 ## 1. Git clone
 ``git clone https://github.com/apollo812/SD.git SDXL``
+``cd SDXL``
 
 ## 2. Run the setup.sh file
 ``bash setup.sh``
