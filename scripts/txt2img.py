@@ -3,12 +3,9 @@ import argparse, os
 import cv2
 import torch
 from PIL import Image
-from utils.load_sdxl_base_model import load_sdxl_base_model
-from utils.load_sdxl_refiner_model import load_sdxl_refiner_model
+from util.load_sdxl_base_model import load_sdxl_base_model
+from util.load_sdxl_refiner_model import load_sdxl_refiner_model
 from dotenv import load_dotenv
-
-# Add the project_root directory to the Python path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 load_dotenv()
 
