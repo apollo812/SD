@@ -1,4 +1,6 @@
 import sys
+sys.path.append('/workspace/SD')
+
 import argparse, os
 import cv2
 import torch
