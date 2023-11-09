@@ -215,7 +215,7 @@ def main(args):
     elif MODEL == "refiner":
         model = load_sdxl_refiner_model(MODEL_TYPE, MODEL_LOAD_TYPE)
 
-    image = model(args).images[0]
+    image = model(args.prompt).images[0]
     image.save("image_of_squirrel_painting.png")
 
 
