@@ -7,18 +7,14 @@ import torch
 from PIL import Image
 from utils.load_sdxl_base_model import load_sdxl_base_model
 from utils.load_sdxl_refiner_model import load_sdxl_refiner_model
-from dotenv import load_dotenv
 
-load_dotenv()
 
-# MODEL_TYPE = os.getenv('MODEL_TYPE')
-# MODEL_LOAD_TYPE = os.getenv('MODEL_LOAD_TYPE')
-# MODEL = os.getenv('MODEL')
 MODEL_TYPE="server"
 MODEL_LOAD_TYPE="pretrained"
 MODEL="base"
 
 
+# Parse arguments
 def parse_args():
     parser = argparse.ArgumentParser(description="Generate an image based on a prompt")
 
@@ -221,6 +217,7 @@ def parse_args():
     return args
 
 
+# Add a watermark to the image
 def put_watermark(img, wm_encoder=None):
     if wm_encoder is not None:
         img = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
@@ -230,12 +227,16 @@ def put_watermark(img, wm_encoder=None):
 
 
 def main(args):
+    # Load stable diffusion xl model
     if MODEL == "base":
         model = load_sdxl_base_model(MODEL_TYPE, MODEL_LOAD_TYPE)
     elif MODEL == "refiner":
         model = load_sdxl_refiner_model(MODEL_TYPE, MODEL_LOAD_TYPE)
 
+    # txt2img 
     image = model(args.prompt).images[0]
+
+    # Save the result
     image.save(f"{args.prompt}.png")
 
 
