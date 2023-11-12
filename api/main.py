@@ -9,6 +9,7 @@ project_root = os.path.abspath(os.path.join(current_script_directory, os.pardir)
 print(current_script_directory)
 print(project_root)
 sys.path.append(project_root)
+sys.path.append(current_script_directory)
 
 from typing import List, Optional
 
