@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  unit:
+    build:
+      context: ..
+      dockerfile: api/Dockerfile
+      target: test
+    volumes:
+      - ../api:/home/user/api
+    environment:
+      - DB_STRING=postgresql://postgres:test@ci_db:5432/postgres
+
+  integration:
+    depends_on:
+      - ci_db
+    build:
+      context: ..
+      dockerfile: api/Dockerfile
+      target: test
+    volumes:
+      - ../api:/home/user/api
+    environment:
+      - DB_STRING=postgresql://postgres:test@ci_db:5432/postgres
+
+  ci_db:
+    image: postgres:14.5
+    environment:
+      - POSTGRES_PASSWORD=test

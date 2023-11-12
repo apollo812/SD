@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-diffusers 
-transformers 
-accelerate 
-safetensors 
-omegaconf 
-invisible-watermark>=0.2.0
