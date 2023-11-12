@@ -214,7 +214,7 @@ def put_watermark(img, wm_encoder=None):
     return img
 
 
-def main(prompt):
+def txt2img(prompt):
     # Load stable diffusion xl model
     if MODEL == "base":
         model = load_sdxl_base_model(MODEL_TYPE, MODEL_LOAD_TYPE)
@@ -231,4 +231,4 @@ def main(prompt):
 
 if __name__ == "__main__":
     args = parse_args()
-    main(args)
+    txt2img(args)

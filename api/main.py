@@ -1,7 +1,7 @@
 from typing import List, Optional
 
-from fastapi import Depends, FastAPI
-from scripts.txt2img import main
+from fastapi import Depends, FastAPI, Response
+from scripts.txt2img import txt2img
 from starlette.responses import RedirectResponse
 from starlette.status import HTTP_201_CREATED
 
@@ -17,7 +17,7 @@ async def root():
 
 @app.post("/txt2img", status_code=HTTP_201_CREATED)
 async def txt2img(prompt: str):
-    result = main(prompt)
+    result = txt2img(prompt)
     result.save("output.png")
 
     # Set the response headers to make the image downloadable
