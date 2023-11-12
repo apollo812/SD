@@ -3,8 +3,8 @@ import argparse, os
 import cv2
 import torch
 from PIL import Image
-from utils.load_sdxl_base_model import load_sdxl_base_model
-from utils.load_sdxl_refiner_model import load_sdxl_refiner_model
+from load_sdxl_base_model import load_sdxl_base_model
+from load_sdxl_refiner_model import load_sdxl_refiner_model
 
 
 MODEL_TYPE="server"
@@ -235,8 +235,9 @@ def main(args):
     # txt2img 
     image = model(args.prompt).images[0]
 
-    # Save the result
-    image.save(f"{OUTPUT_PATH}/{args.prompt}.png")
+    return image
+    # # Save the result
+    # image.save(f"{OUTPUT_PATH}/{args.prompt}.png")
 
 
 if __name__ == "__main__":
