@@ -214,7 +214,7 @@ def put_watermark(img, wm_encoder=None):
     return img
 
 
-def main(args):
+def main(prompt):
     # Load stable diffusion xl model
     if MODEL == "base":
         model = load_sdxl_base_model(MODEL_TYPE, MODEL_LOAD_TYPE)
@@ -222,8 +222,8 @@ def main(args):
         model = load_sdxl_refiner_model(MODEL_TYPE, MODEL_LOAD_TYPE)
 
     # txt2img
-    image = model(args.prompt).images[0]
-
+    image = model(prompt).images[0]
+    
     return image
     # # Save the result
     # image.save(f"{OUTPUT_PATH}/{args.prompt}.png")

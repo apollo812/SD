@@ -6,12 +6,30 @@ from starlette.status import HTTP_201_CREATED
 
 from api.repository import Todo, TodoFilter, TodoRepository, create_todo_repository
 
+from scripts.txt2img import main
+
 app = FastAPI(swagger_ui_parameters={"tryItOutEnabled": True})
 
 
 @app.get("/")
 async def root():
     return RedirectResponse(app.docs_url)
+
+
+@app.post("/txt2img", status_code=HTTP_201_CREATED)
+async def txt2img(prompt: str):
+    result = main(prompt)
+    result.save('output.png')
+
+    # Set the response headers to make the image downloadable
+    response.headers["Content-Disposition"] = 'attachment; filename="output.png"'
+    response.headers["Content-Type"] = "image/png"
+
+    # Return the image file as the response content
+    with open('output.png', 'rb') as f:
+        file_content = f.read()
+
+    return Response(content=file_content, media_type="image/png")
 
 
 @app.post("/create/{key}", status_code=HTTP_201_CREATED)
