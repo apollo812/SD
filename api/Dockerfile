@@ -1,4 +1,4 @@
-FROM python:3.9-slim as base
+FROM python:3.10.2-slim-bullseye as base
 
 ARG PROJECT=api
 

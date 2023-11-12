@@ -2,8 +2,8 @@
 name = "oridosai_api"
 version = "1.0"
 
-authors = ["Chan Shi Feng <goodluckbusiness0101@gmail.com>"]
-maintainers = ["Donny Peeters <goodluckbusiness0101@gmail.com>"]
+authors = []
+maintainers = []
 description = "OridosAI API"
 readme = "README.md"
 homepage = "https://github.com/apollo812/oridosai_api"
@@ -12,7 +12,7 @@ keywords = ["FastAPI"]
 
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 requests = "^2.31.0"
 fastapi = "^0.85.1"
 uvicorn = "^0.18.3"
