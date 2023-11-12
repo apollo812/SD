@@ -1,5 +1,6 @@
 import sys
-sys.path.append('/workspace/SDXL')
+
+sys.path.append("/workspace/SDXL")
 
 from typing import List, Optional
 
