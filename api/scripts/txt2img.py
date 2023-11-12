@@ -223,7 +223,7 @@ def main(prompt):
 
     # txt2img
     image = model(prompt).images[0]
-    
+
     return image
     # # Save the result
     # image.save(f"{OUTPUT_PATH}/{args.prompt}.png")
