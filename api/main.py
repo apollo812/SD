@@ -6,7 +6,8 @@ current_script_directory = os.path.dirname(os.path.abspath(__file__))
 
 # Get the project root path
 project_root = os.path.abspath(os.path.join(current_script_directory, os.pardir))
-
+print(current_script_directory)
+print(project_root)
 sys.path.append(project_root)
 
 from typing import List, Optional
