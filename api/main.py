@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/workspace/SDXL')
+
 from typing import List, Optional
 
 from fastapi import Depends, FastAPI, Response
@@ -16,7 +19,7 @@ async def root():
 
 
 @app.post("/txt2img", status_code=HTTP_201_CREATED)
-async def txt2img(prompt: str):
+async def t2i(prompt: str):
     result = txt2img(prompt)
     result.save("output.png")
 
