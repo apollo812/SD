@@ -2,7 +2,6 @@ import argparse
 import os
 import sys
 
-import cv2
 import torch
 from load_sdxl_base_model import load_sdxl_base_model
 from load_sdxl_refiner_model import load_sdxl_refiner_model
@@ -203,15 +202,6 @@ def parse_args():
 
     args = parser.parse_args()
     return args
-
-
-# Add a watermark to the image
-def put_watermark(img, wm_encoder=None):
-    if wm_encoder is not None:
-        img = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
-        img = wm_encoder.encode(img, "dwtDct")
-        img = Image.fromarray(img[:, :, ::-1])
-    return img
 
 
 def txt2img(prompt):
