@@ -1,5 +1,5 @@
-from diffusers import StableDiffusionXLPipeline
 import torch
+from diffusers import StableDiffusionXLPipeline
 
 
 # Load the SDXL base model locally or online.
@@ -15,7 +15,10 @@ def load_sdxl_base_model(model_type, model_load_type):
         ).to("cuda")
     elif model_load_type == "single":
         pipeline = StableDiffusionXLPipeline.from_single_file(
-            "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/blob/main/sd_xl_base_1.0.safetensors", torch_dtype=torch.float16, variant="fp16", use_safetensors=True
+            "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/blob/main/sd_xl_base_1.0.safetensors",
+            torch_dtype=torch.float16,
+            variant="fp16",
+            use_safetensors=True,
         ).to("cuda")
 
     return pipeline
