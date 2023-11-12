@@ -3,9 +3,9 @@ import os
 import sys
 
 import torch
-from load_sdxl_base_model import load_sdxl_base_model
-from load_sdxl_refiner_model import load_sdxl_refiner_model
 from PIL import Image
+from utils.load_sdxl_base_model import load_sdxl_base_model
+from utils.load_sdxl_refiner_model import load_sdxl_refiner_model
 
 MODEL_TYPE = "server"
 MODEL_LOAD_TYPE = "pretrained"
