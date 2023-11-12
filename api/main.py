@@ -1,6 +1,13 @@
 import sys
+import os
 
-sys.path.append("/workspace/SDXL")
+# Get the current script's directory
+current_script_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Get the project root path
+project_root = os.path.abspath(os.path.join(current_script_directory, os.pardir))
+
+sys.path.append(project_root)
 
 from typing import List, Optional
 
