@@ -24,10 +24,6 @@ async def t2i(prompt: str):
     result = txt2img(prompt)
     result.save("output.png")
 
-    # Set the response headers to make the image downloadable
-    response.headers["Content-Disposition"] = 'attachment; filename="output.png"'
-    response.headers["Content-Type"] = "image/png"
-
     # Return the image file as the response content
     with open("output.png", "rb") as f:
         file_content = f.read()
